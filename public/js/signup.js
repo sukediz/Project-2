@@ -1,14 +1,20 @@
 $(document).ready(() => {
   // Getting references to our form and input
   const signUpForm = $("form.signup");
+  const nameInput = $("input#name-input");
   const emailInput = $("input#email-input");
+  const phoneInput = $("input#phone-input");
+  const cityInput = $("input#city-input");
   const passwordInput = $("input#password-input");
 
-  // When the signup button is clicked, we validate the email and password are not blank
+  // When the signup button is clicked, we validate the name email phone city password are not blank
   signUpForm.on("submit", event => {
     event.preventDefault();
     const userData = {
+      name: nameInput.val().trim(),
       email: emailInput.val().trim(),
+      phone: phoneInput.val().trim(),
+      city: cityInput.val().trim(),
       password: passwordInput.val().trim()
     };
 
@@ -43,5 +49,3 @@ $(document).ready(() => {
     $("#alert").fadeIn(500);
   }
 });
-
-
