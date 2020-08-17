@@ -25,7 +25,10 @@ $(document).ready(() => {
   // Otherwise we log any errors
   function signUpUser(email, password) {
     $.post("/api/signup", {
+      name: name,
       email: email,
+      phone: phone,
+      city: city,
       password: password
     })
       .then(() => {
@@ -40,3 +43,5 @@ $(document).ready(() => {
     $("#alert").fadeIn(500);
   }
 });
+
+
