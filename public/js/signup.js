@@ -3,7 +3,6 @@ $(document).ready(() => {
   const signUpForm = $("form.signup");
   const nameInput = $("input#name-input");
   const emailInput = $("input#email-input");
-  const phoneInput = $("input#phone-input");
   const cityInput = $("input#city-input");
   const passwordInput = $("input#password-input");
 
@@ -13,7 +12,6 @@ $(document).ready(() => {
     const userData = {
       name: nameInput.val().trim(),
       email: emailInput.val().trim(),
-      phone: phoneInput.val().trim(),
       city: cityInput.val().trim(),
       password: passwordInput.val().trim()
     };
@@ -33,7 +31,6 @@ $(document).ready(() => {
     $.post("/api/signup", {
       name: name,
       email: email,
-      phone: phone,
       city: city,
       password: password
     })
