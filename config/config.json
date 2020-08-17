@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "zy4wtsaw3sjejnud.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "password": "pq65w3hxlwudydxy",
+    "username": "root",
+    "password": "Shane284",
     "database": "passport_demo",
     "host": "127.0.0.1",
     "dialect": "mysql"
