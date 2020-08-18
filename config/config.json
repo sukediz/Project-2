@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "restaurant_roulette",
+    "password": "Shane284",
+    "database": "passport_demo",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
