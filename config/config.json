@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "YourRootPassword",
-    "database": "restaurant_roulette",
+    "database": "passport_demo",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
