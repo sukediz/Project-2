@@ -54,7 +54,7 @@ class UI {
     categories.forEach(category => {
       output += `<option value="${category.categories.id}">${
         category.categories.name
-      }</option>`;
+        }</option>`;
     });
     search.innerHTML = output;
   }
@@ -159,9 +159,9 @@ class UI {
   }
 }
 
-(function() {
+(function () {
   const searchForm = document.getElementById("searchForm");
-  const searchCity = document.getElementById("searchCity");
+  const searchCity = document.getElementById("search-city-input");
   const searchCategory = document.getElementById("searchCategory");
 
   const zomato = new ZOMATO();
