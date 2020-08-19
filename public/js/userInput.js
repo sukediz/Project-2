@@ -1,13 +1,10 @@
-
-
-
 const displayInput = () => {
-    const inputLocation = document.getElementById("inputLocation");
-    const inputCuisine = document.getElementById("inputCuisine");
-    let userLocation = $('<div>' + inputLocation.toLowerCase() + '</div>');
-    let userCuisine = $('<div>' + inputCuisine.toLowerCase() + '</div>');
-    console.log(userLocation);
-    console.log(userCuisine);
+  const inputLocation = document.getElementById("inputLocation");
+  const inputCuisine = document.getElementById("inputCuisine");
+  const userLocation = $("<div>" + inputLocation.toLowerCase() + "</div>");
+  const userCuisine = $("<div>" + inputCuisine.toLowerCase() + "</div>");
+  console.log(userLocation);
+  console.log(userCuisine);
 };
 
 displayInput();
