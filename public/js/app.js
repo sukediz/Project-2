@@ -161,7 +161,7 @@ class UI {
 }
 
 (function() {
-  const searchForm = document.getElementById("form.search");
+  const searchForm = document.getElementById("search-form");
   const searchCity = document.getElementById("search-city-input");
   const searchCategory = document.getElementById("searchCategory");
 
