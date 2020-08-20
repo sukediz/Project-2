@@ -50,7 +50,7 @@ class UI {
     this.restaurantList = document.getElementById("restaurant-list");
   }
   addSelectOptions(categories) {
-    const search = document.getElementById("searchCategory");
+    const search = document.getElementById("search-category-input");
     let output = "<option value='0' selected>select category</option>";
     categories.forEach(category => {
       output += `<option value="${category.categories.id}">${category.categories.name}</option>`;
