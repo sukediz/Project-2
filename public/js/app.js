@@ -163,7 +163,7 @@ class UI {
 (function() {
   const searchForm = document.getElementById("search-form");
   const searchCity = document.getElementById("search-city-input");
-  const searchCategory = document.getElementById("searchCategory");
+  const searchCategory = document.getElementById("search-category-input");
 
   const zomato = new ZOMATO();
 
