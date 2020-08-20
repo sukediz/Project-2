@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 class ZOMATO {
   constructor() {
     this.api = "f69dff6b832d824734b9c0c09c9cf66f";
@@ -12,7 +13,7 @@ class ZOMATO {
   }
   async searchAPI(city, categoryID) {
     //category url
-    const categoryURL = `https://developers.zomato.com/api/v2.1/categories`;
+    const categoryURL = "https://developers.zomato.com/api/v2.1/categories";
     //city url
     const cityURL = `https://developers.zomato.com/api/v2.1/cities?q=${city}`;
 
@@ -50,11 +51,9 @@ class UI {
   }
   addSelectOptions(categories) {
     const search = document.getElementById("searchCategory");
-    let output = `<option value='0' selected>select category</option>`;
+    let output = "<option value='0' selected>select category</option>";
     categories.forEach(category => {
-      output += `<option value="${category.categories.id}">${
-        category.categories.name
-        }</option>`;
+      output += `<option value="${category.categories.id}">${category.categories.name}</option>`;
     });
     search.innerHTML = output;
   }
@@ -83,9 +82,11 @@ class UI {
           thumb: img,
           name,
           location: { address },
+          // eslint-disable-next-line camelcase
           user_rating: { aggregate_rating },
           cuisines,
           average_cost_for_two: cost,
+          // eslint-disable-next-line camelcase
           menu_url,
           url
         } = restaurant.restaurant;
@@ -159,7 +160,7 @@ class UI {
   }
 }
 
-(function () {
+(function() {
   const searchForm = document.getElementById("form.search");
   const searchCity = document.getElementById("search-city-input");
   const searchCategory = document.getElementById("searchCategory");
