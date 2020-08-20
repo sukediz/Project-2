@@ -160,42 +160,40 @@ class UI {
   }
 }
 
-(function() {
-  const searchForm = document.getElementById("search-form");
-  const searchCity = document.getElementById("search-city-input");
-  const searchCategory = document.getElementById("search-category-input");
+const searchForm = document.getElementById("search-form");
+const searchCity = document.getElementById("search-city-input");
+const searchCategory = document.getElementById("search-category-input");
 
-  const zomato = new ZOMATO();
+const zomato = new ZOMATO();
 
-  const ui = new UI();
+const ui = new UI();
 
-  //add select options
-  document.addEventListener("DOMContentLoaded", () => {
+//add select options
+document.addEventListener("DOMContentLoaded", () => {
+  //logic goes here
+  zomato.searchAPI().then(data => ui.addSelectOptions(data.categories));
+});
+
+//submti form
+searchForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const city = searchCity.value.toLowerCase();
+  const categoryID = parseInt(searchCategory.value);
+
+  if (city === "" || categoryID === 0) {
+    ui.showFeedback("please enter a city and select category");
+  } else {
     //logic goes here
-    zomato.searchAPI().then(data => ui.addSelectOptions(data.categories));
-  });
-
-  //submti form
-  searchForm.addEventListener("submit", event => {
-    event.preventDefault();
-
-    const city = searchCity.value.toLowerCase();
-    const categoryID = parseInt(searchCategory.value);
-
-    if (city === "" || categoryID === 0) {
-      ui.showFeedback("please enter a city and select category");
-    } else {
-      //logic goes here
-      zomato.searchAPI(city).then(cityData => {
-        if (cityData.cityID === 0) {
-          ui.showFeedback("please enter a valid city !");
-        } else {
-          ui.showLoader();
-          zomato.searchAPI(city, categoryID).then(data => {
-            ui.getRestaurants(data.restaurants);
-          });
-        }
-      });
-    }
-  });
-})();
+    zomato.searchAPI(city).then(cityData => {
+      if (cityData.cityID === 0) {
+        ui.showFeedback("please enter a valid city !");
+      } else {
+        ui.showLoader();
+        zomato.searchAPI(city, categoryID).then(data => {
+          ui.getRestaurants(data.restaurants);
+        });
+      }
+    });
+  }
+});
