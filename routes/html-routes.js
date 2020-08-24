@@ -13,10 +13,18 @@ module.exports = function(app) {
     res.render("login");
   });
 
+  app.get("/signup", (req, res) => {
+    // If the user needs to register send them to the signup page
+    if (req.user) {
+      res.render("signup");
+    }
+    res.render("signup");
+  });
+
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.render("/members");
+      res.render("members");
     }
     res.render("login");
   });
